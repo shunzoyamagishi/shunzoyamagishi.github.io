@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオ | Shunzo YAMAGISHI</title>
+    <!-- Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font (Inter) for clean aesthetics --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* 基本的なスタイル設定 */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* GitHub Dark Mode Background */
+            color: #c9d1d9; /* Light text for dark background */
+            scroll-behavior: smooth;
+        }
+        .section-title {
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #38bdf8; /* Sky Blue accent */
+            border-radius: 9999px;
+        }
+        /* サブセクションのタイトルのスタイル */
+        .subsection-title {
+            color: #38bdf8; /* Sky Blue */
+            font-weight: 600; /* semi-bold */
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            padding-left: 0.5rem;
+            border-left: 4px solid #38bdf8;
+        }
+        /* プロジェクトカードのホバーエフェクト */
+        .project-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .project-card:hover .project-thumbnail {
+            transform: translateY(-5px);
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            border-color: #38bdf8;
+        }
+        /* ヘッダーのオフセット調整（アンカーリンク用） */
+        section {
+            scroll-margin-top: 100px;
+        }
+
+        /* トグル（details/summary）のスタイル */
+        details summary {
+            list-style: none;
+            cursor: pointer;
+            outline: none;
+        }
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary .toggle-icon {
+            transform: rotate(90deg);
+        }
+
+        /* 論文リストのホバー強調 */
+        .pub-item:hover {
+            background-color: rgba(56, 189, 248, 0.03);
+        }
+
+        /* モーダルアニメーション */
+        #project-modal {
+            transition: opacity 0.3s ease;
+        }
+        #modal-content {
+            transition: transform 0.3s ease;
+        }
+        body.modal-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ナビゲーションヘッダー -->
+    <nav class="fixed w-full top-0 z-50 bg-[#0d1117]/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="text-lg text-sky-400 font-semibold">Shunzo Yamagishi</div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-sky-400 transition-colors">About</a>
+                <a href="#experience" class="hover:text-sky-400 transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-sky-400 transition-colors">Projects</a>
+                <a href="#publications" class="hover:text-sky-400 transition-colors">Publications</a>
+            </div>
+            <!-- モバイル用簡易リンク -->
+            <div class="md:hidden flex space-x-4 text-xs font-medium">
+                <a href="#about" class="hover:text-sky-400">About</a>
+                <a href="#projects" class="hover:text-sky-400">Projects</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- メインコンテナ -->
+    <div class="max-w-4xl mx-auto p-6 md:p-10 space-y-16 mt-16">
+
+        <!-- 1. 名前と簡単な自己紹介 -->
+        <header id="about" class="text-center pt-8 pb-4">
+            <div class="mb-8">
+                <img 
+                    src="https://placehold.co/128x128/38bdf8/ffffff?text=Your+Photo" 
+                    alt="あなたの顔写真" 
+                    class="mx-auto rounded-full w-32 h-32 object-cover border-4 border-sky-500 shadow-xl transition duration-500 hover:scale-105"
+                >
+            </div>
+            
+            <h1 class="text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500 mb-2 font-bold">
+                Shunzo YAMAGISHI
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 font-light mb-6">
+                山岸 峻造
+            </p>
+
+            <section class="text-left mt-8 p-6 bg-[#161b22] rounded-xl shadow-lg border border-gray-700">
+                <h2 class="section-title text-2xl font-bold">自己紹介</h2>
+                <p class="text-gray-300 leading-relaxed">
+                    筑波大学大学院エンパワーメント情報学プログラム（博士後期課程）に在学しております。<br>
+                    スポーツ現場のハイパフォーマンスを支える技術をテーマに、スポーツ×コンピュータービジョンの学際で活動をしています。<br><br>
+                    筑波大学 画像情報研究室 北原格教授、宍戸英彦助教（現 創価大准教授）に師事。<br>
+                    筑波大学体育系ヒューマン・ハイ・パフォーマンス先端研究センター(ARIHHP)リサーチアシスタント（RA）としても活動。<br><br>
+                    科学技術振興機構 次世代研究者挑戦的研究プログラム（SPRING）採択。
+                </p>
+                <!--
+                <div class="mt-4 flex justify-center space-x-6 text-2xl">
+                    <a href="#" target="_blank" class="hover:text-sky-400 transition duration-300" aria-label="GitHub">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12c0 5.303 3.438 9.8 8.207 11.387.6.11.82-.26.82-.57v-2.064c-3.338.724-4.043-1.61-4.043-1.61-.547-1.387-1.334-1.758-1.334-1.758-1.087-.745.084-.73.084-.73 1.205.084 1.838 1.234 1.838 1.234 1.07 1.837 2.809 1.305 3.49.998.107-.775.419-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.233-3.22-.123-.3-.535-1.52.117-3.18 0 0 1.008-.323 3.301 1.23.957-.266 1.983-.4 3.003-.404 1.02.004 2.046.138 3.003.404 2.293-1.553 3.301-1.23 3.301-1.23.652 1.66.24 2.88.118 3.18.768.84 1.233 1.91 1.233 3.22 0 4.61-2.805 5.625-5.474 5.923.43.37.817 1.105.817 2.227v3.29c0 .31.22.68.825.56C20.565 21.8 24 17.303 24 12c0-6.628-5.372-12-12-12z"/></svg>
+                    </a>
+                    <a href="#" target="_blank" class="hover:text-sky-400 transition duration-300" aria-label="LinkedIn">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.716c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.716h-3v-5.604c0-3.368-4-3.535-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                </div>-->
+            </section>
+        </header>
+
+        <!-- 2. 経歴 -->
+        <section id="experience" class="p-6 bg-[#161b22] rounded-xl shadow-lg border border-gray-700">
+            <h2 class="section-title text-2xl font-bold">経歴 (学歴・職歴)</h2>
+            <div class="space-y-8">
+                <h3 class="subsection-title text-xl">学歴 (Education)</h3>
+                <div class="border-l-4 border-gray-600 pl-4 py-1">
+                    <p class="text-sm text-gray-400">2025年4月 - 現在</p>
+                    <h4 class="text-xl text-white font-semibold">筑波大学大学院 一貫性博士課程</h4>
+                    <p class="text-lg text-gray-300">理工情報生命学術院 システム情報工学研究群 エンパワーメント情報学プログラム</p>
+                </div>
+                <div class="border-l-4 border-gray-600 pl-4 py-1">
+                    <p class="text-sm text-gray-400">2023年4月 - 2025年3月</p>
+                    <h4 class="text-xl text-white font-semibold">筑波大学大学院 博士前期課程</h4>
+                    <p class="text-lg text-gray-300">知能機能システム工学プログラム 修士（工学）</p>
+                </div>
+                <div class="border-l-4 border-gray-600 pl-4 py-1">
+                    <p class="text-sm text-gray-400">2017年4月 - 2023年3月</p>
+                    <h4 class="text-xl text-white font-semibold">筑波大学 理工学群 工学システム学類</h4>
+                    <p class="text-lg text-gray-300">学士（工学）</p>
+                </div>
+                
+                <h3 class="subsection-title text-xl">職歴 / 研究活動 (Experience & Research)</h3>
+                <div class="border-l-4 border-gray-600 pl-4 py-1">
+                    <p class="text-sm text-gray-400">2023年6月 - 現在</p>
+                    <h4 class="text-xl text-white font-semibold">筑波大学体育系ヒューマン・ハイ・パフォーマンス先端研究センター(ARIHHP)</h4>
+                    <p class="text-lg text-gray-300">リサーチアシスタント（RA）</p>
+                </div>
+                <div class="border-l-4 border-gray-600 pl-4 py-1">
+                    <p class="text-sm text-gray-400">2024年9月 - 2025年4月</p>
+                    <h4 class="text-xl text-white font-semibold">株式会社 Playbox</h4>
+                    <p class="text-lg text-gray-300">インターンシップ（サポートエンジニア）</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. プロジェクト -->
+        <section id="projects" class="p-6 bg-[#161b22] rounded-xl shadow-lg border border-gray-700">
+            <h2 class="section-title text-2xl font-bold">プロジェクト</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- プロジェクト 1 -->
+                <div class="project-card p-4 border border-sky-600/50 rounded-lg bg-sky-900/10 transition duration-300" onclick="openModal('project1')">
+                    <img src="https://via.placeholder.com/400x200?text=PTZ+Tracking" alt="プロジェクト1" class="project-thumbnail w-full h-40 object-cover rounded-md mb-4 transition duration-300">
+                    <h3 class="text-xl font-bold text-sky-300 mb-1">PTZ映像からの選手位置推定</h3>
+                    <p class="text-gray-400 line-clamp-2">大きなPTZ変化を含む映像からの実用的な選手位置推定手法を構築しました。</p>
+                </div>
+                <!-- プロジェクト 2 -->
+                <div class="project-card p-4 border border-indigo-600/50 rounded-lg bg-indigo-900/10 transition duration-300" onclick="openModal('project2')">
+                    <img src="https://via.placeholder.com/400x200?text=Coord+Estimation" alt="プロジェクト2" class="project-thumbnail w-full h-40 object-cover rounded-md mb-4 transition duration-300">
+                    <h3 class="text-xl font-bold text-indigo-300 mb-1">選手位置推定精度向上のための座標決定法</h3>
+                    <p class="text-gray-400 line-clamp-2">発展的な画像座標系における選手位置決定法を提案し、精度の向上を実現しました。</p>
+                </div>
+                <!-- プロジェクト 3 -->
+                <div class="project-card p-4 border border-sky-600/50 rounded-lg bg-sky-900/10 transition duration-300" onclick="openModal('project3')">
+                    <img src="https://via.placeholder.com/400x200?text=SoccerNet+Challenge" alt="プロジェクト3" class="project-thumbnail w-full h-40 object-cover rounded-md mb-4 transition duration-300">
+                    <h3 class="text-xl font-bold text-sky-300 mb-1">SoccerNet Challenge 2025 GSR</h3>
+                    <p class="text-gray-400 line-clamp-2">CVPR 2025におけるコンペティション「SoccerNet Challenge」に参画しました。</p>
+                </div>
+                <!-- プロジェクト 4 -->
+                <div class="project-card p-4 border border-indigo-600/50 rounded-lg bg-indigo-900/10 transition duration-300" onclick="openModal('project4')">
+                    <img src="https://via.placeholder.com/400x200?text=VR+Skateboard" alt="プロジェクト4" class="project-thumbnail w-full h-40 object-cover rounded-md mb-4 transition duration-300">
+                    <h3 class="text-xl font-bold text-indigo-300 mb-1">Skateboard Ollie Simulator</h3>
+                    <p class="text-gray-400 line-clamp-2">筑波大学エンパワースタジオを用いたVRスケートボードシミュレーターの開発を担当。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 論文一覧 (Publications) -->
+        <section id="publications" class="p-6 bg-[#161b22] rounded-xl shadow-lg border border-gray-700">
+            <h2 class="section-title text-2xl font-bold">論文一覧 / 発表</h2>
+            
+            <div class="space-y-6">
+                
+                <!-- 国際論文 -->
+                <details class="group border border-gray-700 rounded-lg overflow-hidden" open>
+                    <summary class="flex items-center justify-between p-4 bg-[#1c2128] hover:bg-[#252c35] transition-colors border-b border-gray-700">
+                        <span class="text-lg font-semibold text-sky-400">査読付き国際会議論文 / International Conferences</span>
+                        <svg class="toggle-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </summary>
+                    <div class="bg-[#161b22] divide-y divide-gray-800">
+                        <!-- 論文 1 -->
+                        <div class="pub-item p-4 relative pl-12 transition-colors">
+                            <span class="absolute left-4 top-4 text-sky-500 font-bold">1.</span>
+                            <h4 class="text-white font-bold text-lg mb-1 leading-tight">A Player Position Tracking Method Based on a Wide-Area Pan-Tilt-Zoom Video</h4>
+                            <p class="text-gray-300 text-sm mb-2"><u>Shunzo Yamagishi</u>, Chun Xie, Hidehiko Shishido, Itaru Kitahara</p>
+                            <p class="text-xs text-gray-500 italic">in Proceedings of the 12th International Conference on Sport Sciences Research and Technology Support, SciTePress, 46–53, Dec. 2024</p>
+                        </div>
+                        <!-- 論文 2 -->
+                        <div class="pub-item p-4 relative pl-12 transition-colors">
+                            <span class="absolute left-4 top-4 text-sky-500 font-bold">2.</span>
+                            <h4 class="text-white font-bold text-lg mb-1 leading-tight">Visualization method of movement trajectory in outfielder’s fly ball catching technique using baseball video</h4>
+                            <p class="text-gray-300 text-sm mb-2"><u>Shunzo Yamagishi</u>, Hidehiko Shishido, Yoshinari Kameda, Itaru Kitahara</p>
+                            <p class="text-xs text-gray-500 italic">in Proceedings of the SPIE, Volume 12592, International Workshop on Advanced Imaging Technology (IWAIT) 2023, SPIE, pp. 54–59, Mar. 2023.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 国内会議論文 -->
+                <details class="group border border-gray-700 rounded-lg overflow-hidden">
+                    <summary class="flex items-center justify-between p-4 bg-[#1c2128] hover:bg-[#252c35] transition-colors border-b border-gray-700">
+                        <span class="text-lg font-semibold text-sky-400">国内会議論文 / Domestic Conferences</span>
+                        <svg class="toggle-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </summary>
+                    <div class="bg-[#161b22] divide-y divide-gray-800">
+                        <div class="pub-item p-4 relative pl-12 transition-colors">
+                            <span class="absolute left-4 top-4 text-sky-500 font-bold">1.</span>
+                            <h4 class="text-white font-bold text-lg mb-1 leading-tight">フィールド上の選手位置推定精度向上のためのCGシミュレーションを用いたデータセットの構築</h4>
+                            <p class="text-gray-300 text-sm mb-2">池上 柊人, <u>山岸 峻造</u>, 尾山 匡浩, 北原 格</p>
+                            <p class="text-xs text-gray-500 italic">研究報告スポーツ情報学（SI）, 2024-SI-2, No. 1, pp. 1-3, 2024</p>
+                        </div>
+                        <div class="pub-item p-4 relative pl-12 transition-colors">
+                            <span class="absolute left-4 top-4 text-sky-500 font-bold">2.</span>
+                            <h4 class="text-white font-bold text-lg mb-1 leading-tight">野球放送映像におけるフライ性打球に対する外野手の移動軌跡の可視化手法</h4>
+                            <p class="text-gray-300 text-sm mb-2"><u>山岸 峻造</u>, 謝 淳, 宍戸 英彦, 北原 格</p>
+                            <p class="text-xs text-gray-500 italic">電子情報通信学会技術研究報告，Vol. 123，No.347，2024，pp.47-52</p>
+                        </div>
+                        <div class="pub-item p-4 relative pl-12 transition-colors">
+                            <span class="absolute left-4 top-4 text-sky-500 font-bold">3.</span>
+                            <h4 class="text-white font-bold text-lg mb-1 leading-tight">野球映像を用いた外野手の捕球技術における移動軌跡の分析</h4>
+                            <p class="text-gray-300 text-sm mb-2"><u>山岸 峻造</u>, 宍戸 英彦, 亀田 能成，北原 格</p>
+                            <p class="text-xs text-gray-500 italic">情報科学技術フォーラム講演論文集, Vol. 21, No.3, pp. 257-258, 2022</p>
+                        </div>
+                        <div class="pub-item p-4 relative pl-12 transition-colors">
+                            <span class="absolute left-4 top-4 text-sky-500 font-bold">4.</span>
+                            <h4 class="text-white font-bold text-lg mb-1 leading-tight">野球映像を用いた外野手のフライ性打球における移動軌跡の可視化</h4>
+                            <p class="text-gray-300 text-sm mb-2"><u>山岸 峻造</u>, 宍戸 英彦, 亀田 能成，北原 格</p>
+                            <p class="text-xs text-gray-500 italic">電子情報通信学会技術研究報告, Vol. 122, No.175, pp.32-37, 2022</p>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 発表等 -->
+                <details class="group border border-gray-700 rounded-lg overflow-hidden">
+                    <summary class="flex items-center justify-between p-4 bg-[#1c2128] hover:bg-[#252c35] transition-colors border-b border-gray-700">
+                        <span class="text-lg font-semibold text-sky-400">その他 (発表・修士論文等) / Others</span>
+                        <svg class="toggle-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </summary>
+                    <div class="bg-[#161b22] divide-y divide-gray-800">
+                        <div class="pub-item p-4 relative pl-12 transition-colors">
+                            <span class="absolute left-4 top-4 text-sky-500 font-bold">1.</span>
+                            <h4 class="text-white font-bold text-lg mb-1 leading-tight">動的に撮影した映像に基づく広域人物トラッキング</h4>
+                            <p class="text-gray-300 text-sm mb-2">北原 格, <u>山岸 峻造</u>, 池上 柊人</p>
+                            <p class="text-xs text-gray-500 italic">ハイパフォーマンススポーツ・カンファレンス2025，東京都北区，2025年12月</p>
+                        </div>
+                        <div class="pub-item p-4 relative pl-12 transition-colors">
+                            <span class="absolute left-4 top-4 text-sky-500 font-bold">2.</span>
+                            <h4 class="text-white font-bold text-lg mb-1 leading-tight">SoccerNet 2025 Challenges Results</h4>
+                            <p class="text-gray-300 text-sm mb-2">S. Giancola et al.</p>
+                            <p class="text-xs text-gray-500 italic">arXiv: arXiv:2508.19182. doi: [10.48550/arXiv.2508.19182](https://doi.org/10.48550/arXiv.2508.19182),Aug.26,2025</p>
+                        </div>
+                        <div class="pub-item p-4 relative pl-12 transition-colors">
+                            <span class="absolute left-4 top-4 text-sky-500 font-bold">3.</span>
+                            <h4 class="text-white font-bold text-lg mb-1 leading-tight">動的撮影映像による広範囲を移動する選手の位置推定法の検討</h4>
+                            <p class="text-gray-300 text-sm mb-2"><u>山岸 峻造</u>, 謝 淳, 宍戸 英彦, 北原 格</p>
+                            <p class="text-xs text-gray-500 italic">Sports Informatics and Technology 2025，東京都江東区，2025年7月</p>
+                        </div>
+                        <div class="pub-item p-4 relative pl-12 transition-colors">
+                            <span class="absolute left-4 top-4 text-sky-500 font-bold">4.</span>
+                            <h4 class="text-white font-bold text-lg mb-1 leading-tight">サッカー放送映像を用いたGame State Reconstructionのための統合的パイプライン構築</h4>
+                            <p class="text-gray-300 text-sm mb-2">スコットアトム, Yeung Calvin, 鈴木智大, 藤井慶輔, 上川優太, 内田郁真, 中山晴斗, <u>山岸 峻造</u>, Shrestha Pragyan, 登内雅人, 渡辺莉央, 橋口昂矢</p>
+                            <p class="text-xs text-gray-500 italic">第28回画像の認識・理解シンポジウム(MIRU2025)，京都市，2025年7月</p>
+                        </div>
+                        <div class="pub-item p-4 relative pl-12 transition-colors">
+                            <span class="absolute left-4 top-4 text-sky-500 font-bold">5.</span>
+                            <h4 class="text-white font-bold text-lg mb-1 leading-tight">Player Position Estimating Method based on a Wide-Area Pan-Tilt-Zoom Video</h4>
+                            <p class="text-gray-300 text-sm mb-2"><u>Shunzo Yamagishi</u>, Chun Xie, Hidehiko Shishido, Itaru Kitahara</p>
+                            <p class="text-xs text-gray-500 italic">ARIHHP Human High Performance Forum 2025, Tsukuba, Mar.2025</p>
+                        </div>
+                        <div class="pub-item p-4 relative pl-12 transition-colors">
+                            <span class="absolute left-4 top-4 text-sky-500 font-bold">6.</span>
+                            <h4 class="text-white font-bold text-lg mb-1 leading-tight">パンチルトズーム映像に基づく大規模フィールド上を移動する人物の位置推定法</h4>
+                            <p class="text-gray-300 text-sm mb-2"><u>山岸 峻造</u></p>
+                            <p class="text-xs text-gray-500 italic">筑波大学 理工情報生命学術院 システム情報工学研究群 知能機能システム学位プログラム 修士論文発表会</p>
+                        </div>
+                        <div class="pub-item p-4 relative pl-12 transition-colors">
+                            <span class="absolute left-4 top-4 text-sky-500 font-bold">7.</span>
+                            <h4 class="text-white font-bold text-lg mb-1 leading-tight">パンチルトズーム映像による広範囲を移動する選手の位置推定手法</h4>
+                            <p class="text-gray-300 text-sm mb-2"><u>山岸 峻造</u>, 謝 淳, 宍戸 英彦, 北原 格</p>
+                            <p class="text-xs text-gray-500 italic">第27回画像の認識・理解シンポジウム(MIRU2024)，熊本市，2024年8月</p>
+                        </div>
+                        <div class="pub-item p-4 relative pl-12 transition-colors">
+                            <span class="absolute left-4 top-4 text-sky-500 font-bold">8.</span>
+                            <h4 class="text-white font-bold text-lg mb-1 leading-tight">野球映像を用いた外野手のフライ性打球に対する移動軌跡の可視化</h4>
+                            <p class="text-gray-300 text-sm mb-2"><u>山岸 峻造</u></p>
+                            <p class="text-xs text-gray-500 italic">筑波大学 理工学群 工学システム学類 卒業論文発表会</p>
+                        </div>
+                    </div>
+                </details>
+                <!-- 受賞 -->
+                <details class="group border border-gray-700 rounded-lg overflow-hidden">
+                    <summary class="flex items-center justify-between p-4 bg-[#1c2128] hover:bg-[#252c35] transition-colors border-b border-gray-700">
+                        <span class="text-lg font-semibold text-sky-400">受賞 / Award</span>
+                        <svg class="toggle-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </summary>
+                    <div class="bg-[#161b22] divide-y divide-gray-800">
+                        <div class="pub-item p-4 relative pl-12 transition-colors">
+                            <span class="absolute left-4 top-4 text-sky-500 font-bold">1.</span>
+                            <h4 class="text-white font-bold text-lg mb-1 leading-tight">筑波大学優秀修士論文賞</h4>
+                            <p class="text-xs text-gray-500 italic">筑波大学 理工情報生命学術院 システム情報工学研究群 知能機能システム学位プログラム, つくば市，2025年3月</p>
+                        </div>
+                        <div class="pub-item p-4 relative pl-12 transition-colors">
+                            <span class="absolute left-4 top-4 text-sky-500 font-bold">2.</span>
+                            <h4 class="text-white font-bold text-lg mb-1 leading-tight">筑波大学茗渓会賞</h4>
+                            <p class="text-xs text-gray-500 italic">筑波大学 理工情報生命学術院 システム情報工学研究群 知能機能システム学位プログラム, つくば市，2025年3月</p>
+                        </div>
+                        <div class="pub-item p-4 relative pl-12 transition-colors">
+                            <span class="absolute left-4 top-4 text-sky-500 font-bold">3.</span>
+                            <h4 class="text-white font-bold text-lg mb-1 leading-tight">icSPORTS2024 Best Student Paper Honorable Mention</h4>
+                            <p class="text-xs text-gray-500 italic">the International Conference on Sport Sciences Research and Technology Support (icSPORTS) 2024, Porto, 2025年3月</p>
+                        </div>
+                        <div class="pub-item p-4 relative pl-12 transition-colors">
+                            <span class="absolute left-4 top-4 text-sky-500 font-bold">4.</span>
+                            <h4 class="text-white font-bold text-lg mb-1 leading-tight">筑波大学校友会江崎賞</h4>
+                            <p class="text-xs text-gray-500 italic">筑波大学 理工学群 工学システム学類, つくば市, 2023年3月</p>
+                        </div>
+                        <div class="pub-item p-4 relative pl-12 transition-colors">
+                            <span class="absolute left-4 top-4 text-sky-500 font-bold">5.</span>
+                            <h4 class="text-white font-bold text-lg mb-1 leading-tight">IWAIT2023 Best Paper Award</h4>
+                            <p class="text-xs text-gray-500 italic">International Workshop on Advanced Imaging Technology (IWAIT) 2023, Jeju, Jan.2023</p>
+                        </div>
+                    </div>
+                </details>
+
+            </div>
+        </section>
+        
+        <footer class="text-center text-sm text-gray-500 py-10 border-t border-gray-800">
+            <p>&copy; 2025 Shunzo Yamagishi. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- プロジェクト詳細モーダル -->
+    <div id="project-modal" class="fixed inset-0 z-[100] hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div id="modal-content" class="bg-[#161b22] w-full max-w-2xl max-h-[90vh] rounded-2xl shadow-2xl border border-gray-700 overflow-hidden flex flex-col scale-95 opacity-0 transition-all duration-300">
+            <!-- モーダルヘッダー -->
+            <div class="flex items-center justify-between p-6 border-b border-gray-800 bg-[#1c2128]">
+                <h3 id="modal-title" class="text-2xl font-bold text-sky-400">Project Title</h3>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <!-- モーダルボディ -->
+            <div class="p-6 overflow-y-auto custom-scrollbar space-y-6">
+                <img id="modal-img" src="" alt="" class="w-full h-64 object-cover rounded-xl border border-gray-700">
+                
+                <div>
+                    <h4 class="text-gray-400 text-xs uppercase tracking-widest font-bold mb-2">概要</h4>
+                    <p id="modal-description" class="text-gray-200 leading-relaxed text-lg">Detailed description goes here...</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="text-gray-400 text-xs uppercase tracking-widest font-bold mb-2">使用技術</h4>
+                        <div id="modal-tech" class="flex flex-wrap gap-2">
+                            <!-- Tech badges will be injected here -->
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-gray-400 text-xs uppercase tracking-widest font-bold mb-2">担当・成果</h4>
+                        <p id="modal-role" class="text-gray-300 text-sm">Role details...</p>
+                    </div>
+                </div>
+            </div>
+            <!-- モーダルフッター -->
+            <div class="p-4 bg-[#0d1117] border-t border-gray-800 flex justify-end">
+                <button onclick="closeModal()" class="px-6 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors font-medium">閉じる</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // プロジェクトデータの定義
+        const projects = {
+            project1: {
+                title: "PTZ映像からの選手位置推定",
+                img: "https://via.placeholder.com/800x400?text=PTZ+Positioning+Research",
+                description: "スポーツ現場での実用性の高いパン・チルト・ズーム（PTZ）カメラの映像から、選手のフィールド平面を推定可能なシステムです。ランドマークが疎なスポーツフィールドにおける動的なカメラワーク下での高精度な位置推定を実現しました。",
+                tech: ["Python", "PyTorch", "OpenCV"],
+                role: "複数の査読付き国際会議にて発表。"
+            },
+            project2: {
+                title: "選手位置推定精度向上のための座標決定法",
+                img: "https://via.placeholder.com/800x400?text=Coordinate+Logic",
+                description: "単眼映像による選手フィールド位置推定法の精度向上を目的に、発展的な画像座標系における選手位置決定法を提案しました。提案手法は、スポーツ競技におけるジャンプ等の複雑な動作時においても従来より高精度な位置推定を可能にします。",
+                tech: ["Python", "PyTorch", "Unity"],
+                role: "Now in Progress...."
+            },
+            project3: {
+                title: "SoccerNet Challenge 2025 GSR",
+                img: "https://via.placeholder.com/800x400?text=SoccerNet+Challenge",
+                description: "株式会社Playboxと株式会社MIXIの共同チームにて、CVPR 2025コンペティション「SoccerNet Challenge (Game State Reconstruction)」に参加。サッカーの放送映像から選手の3D位置やフィールド上の情報を再構成するパイプラインを開発しました。",
+                tech: ["Python", "Pytorch", "OpenCV"],
+                role: "自動カメラキャリブレーション部分の技術開発を担当。"
+            },
+            project4: {
+                title: "Skateboard Ollie Simulator",
+                img: "https://via.placeholder.com/800x400?text=VR+Ollie+Simulation",
+                description: "筑波大学のエンパワースタジオ（大規模VR空間）を活用し、スケートボードのオーリーをVR空間で再現可能なシミュレーターを構築しました。",
+                tech: ["VR/AR", "Unity", "Arduino"],
+                role: "VR映像提示システムおよびマイクロコンピュータとの通信によるセンサデータ取得部分を担当。"
+            }
+        };
+
+        function openModal(projectId) {
+            const data = projects[projectId];
+            if (!data) return;
+
+            // コンテンツの注入
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-img').src = data.img;
+            document.getElementById('modal-img').alt = data.title;
+            document.getElementById('modal-description').textContent = data.description;
+            document.getElementById('modal-role').textContent = data.role;
+
+            const techContainer = document.getElementById('modal-tech');
+            techContainer.innerHTML = '';
+            data.tech.forEach(t => {
+                const badge = document.createElement('span');
+                badge.className = 'px-3 py-1 bg-sky-500/10 text-sky-400 text-xs font-bold rounded-full border border-sky-500/20';
+                badge.textContent = t;
+                techContainer.appendChild(badge);
+            });
+
+            // モーダル表示
+            const modal = document.getElementById('project-modal');
+            const content = document.getElementById('modal-content');
+            
+            document.body.classList.add('modal-open');
+            modal.classList.remove('hidden');
+            
+            // アニメーションのトリガー
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('project-modal');
+            const content = document.getElementById('modal-content');
+            
+            content.classList.add('scale-95', 'opacity-0');
+            content.classList.remove('scale-100', 'opacity-100');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.classList.remove('modal-open');
+            }, 300);
+        }
+
+        // 背景クリックで閉じる
+        document.getElementById('project-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
+</body>
+</html>
