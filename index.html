@@ -15,17 +15,19 @@
     <!-- ナビゲーションヘッダー -->
     <nav class="fixed w-full top-0 z-50 bg-[#0d1117]/80 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="text-lg text-sky-400 font-semibold">Shunzo Yamagishi</div>
+            <div class="text-lg text-sky-400 font-semibold italic">SY Portfolio</div>
             <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#about" class="hover:text-sky-400 transition-colors">About</a>
-                <a href="#experience" class="hover:text-sky-400 transition-colors">Experience</a>
-                <a href="#projects" class="hover:text-sky-400 transition-colors">Projects</a>
-                <a href="#publications" class="hover:text-sky-400 transition-colors">Publications</a>
-            </div>
-            <!-- モバイル用簡易リンク -->
-            <div class="md:hidden flex space-x-4 text-xs font-medium">
                 <a href="#about" class="hover:text-sky-400">About</a>
+                <a href="#experience" class="hover:text-sky-400">Experience</a>
                 <a href="#projects" class="hover:text-sky-400">Projects</a>
+                <a href="#publications" class="hover:text-sky-400">Publications</a>
+                <a href="#links" class="hover:text-sky-400">Links</a>
+                <a href="#contact" class="hover:text-sky-400">Contact</a>
+            </div>
+            <div class="md:hidden flex space-x-4 text-xs">
+                <a href="#about" class="hover:text-sky-400">About</a>
+                <a href="#links" class="hover:text-sky-400">Links</a>
+                <a href="#contact" class="hover:text-sky-400">Contact</a>
             </div>
         </div>
     </nav>
@@ -53,11 +55,9 @@
             <section class="text-left mt-8 p-6 bg-[#161b22] rounded-xl shadow-lg border border-gray-700">
                 <h2 class="section-title text-2xl font-bold">自己紹介</h2>
                 <p class="text-gray-300 leading-relaxed">
-                    筑波大学大学院エンパワーメント情報学プログラム（博士後期課程）に在学しております。<br>
+                    筑波大学大学院エンパワーメント情報学プログラム（博士後期課程）に在学中。<br>
                     スポーツ現場のハイパフォーマンスを支える技術をテーマに、スポーツ×コンピュータービジョンの学際で活動をしています。<br><br>
                     筑波大学 画像情報研究室 北原格教授、宍戸英彦助教（現 創価大准教授）に師事。<br>
-                    筑波大学体育系ヒューマン・ハイ・パフォーマンス先端研究センター(ARIHHP)リサーチアシスタント（RA）としても活動。<br><br>
-                    科学技術振興機構 次世代研究者挑戦的研究プログラム（SPRING）採択。
                 </p>
                 <!--
                 <div class="mt-4 flex justify-center space-x-6 text-2xl">
@@ -296,7 +296,28 @@
             </div>
         </section>
 
-        <!-- 5. 連絡先 (Contact) -->
+        <!-- 5. 関連リンク (Links) -->
+        <section id="links" class="p-6 bg-[#161b22] rounded-xl shadow-lg border border-gray-700">
+            <h2 class="section-title text-2xl font-bold">関連リンク</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="https://www.image.iit.tsukuba.ac.jp/" target="_blank" class="link-item p-4 border border-gray-700 rounded-lg flex items-center justify-between bg-[#0d1117]/50">
+                    <div>
+                        <div class="text-sm text-gray-500 uppercase font-bold tracking-wider">Laboratory</div>
+                        <div class="text-lg font-semibold">筑波大学 画像情報研究室</div>
+                    </div>
+                    <svg class="w-5 h-5 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+                <a href="https://www.arihhp.tsukuba.ac.jp/" target="_blank" class="link-item p-4 border border-gray-700 rounded-lg flex items-center justify-between bg-[#0d1117]/50">
+                    <div>
+                        <div class="text-sm text-gray-500 uppercase font-bold tracking-wider">Research Center</div>
+                        <div class="text-lg font-semibold">筑波大学 ARIHHP</div>
+                    </div>
+                    <svg class="w-5 h-5 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- 6. 連絡先 (Contact) -->
         <section id="contact" class="p-6 bg-[#161b22] rounded-xl shadow-lg border border-gray-700">
             <h2 class="section-title text-2xl font-bold">連絡先</h2>
             <div class="flex flex-col items-center md:items-start space-y-4">
