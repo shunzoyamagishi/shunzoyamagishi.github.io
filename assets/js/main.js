@@ -4,21 +4,21 @@ const projects = {
         title: "PTZ映像からの選手位置推定",
         img: "images/MLB.jpg",
         description: "スポーツ現場での実用性の高いパン・チルト・ズーム（PTZ）カメラの映像から、選手のフィールド平面を推定可能なシステムです。ランドマークが疎なスポーツフィールドにおける動的なカメラワーク下での高精度な位置推定を実現しました。",
-        tech: ["Python", "PyTorch", "OpenCV"],
+        tech: ["Python", "OpenCV", "scikit-learn","Camera Calibration"],
         role: "複数の査読付き国際会議にて発表。"
     },
     project2: {
         title: "選手位置推定精度向上のための座標決定法",
         img: "images/running.png",
         description: "単眼映像による選手フィールド位置推定法の精度向上を目的に、発展的な画像座標系における選手位置決定法を提案しました。提案手法は、スポーツ競技におけるジャンプ等の複雑な動作時においても従来より高精度な位置推定を可能にします。",
-        tech: ["Python", "PyTorch", "Unity"],
+        tech: ["Python", "PyTorch", "Unity", "DeepLearning"],
         role: "Now in Progress...."
     },
     project3: {
         title: "SoccerNet Challenge 2025 GSR",
         img: "https://cdn.buttercms.com/MUfvkohlSPMrGHGYpyuq",
         description: "株式会社Playboxと株式会社MIXIの共同チームにて、CVPR 2025コンペティション「SoccerNet Challenge (Game State Reconstruction)」に参加。サッカーの放送映像から選手の3D位置やフィールド上の情報を再構成するパイプラインを開発しました。",
-        tech: ["Python", "Pytorch", "OpenCV"],
+        tech: ["Python", "OpenCV", "scikit-learn","DeepLearning"],
         role: "自動カメラキャリブレーション部分の技術開発を担当。"
     },
     project4: {
