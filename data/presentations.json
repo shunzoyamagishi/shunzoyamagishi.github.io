@@ -1,34 +1,110 @@
 {
-    "international": [
+  "intl": [
+    {
+      "title": "A Player Position Tracking Method Based on a Wide-Area Pan-Tilt-Zoom Video",
+      "authors": "Shunzo Yamagishi, Chun Xie, Hidehiko Shishido, Itaru Kitahara",
+      "cite": "in Proceedings of the 12th International Conference on Sport Sciences Research and Technology Support, SciTePress, 46–53, Dec. 2024"
+    },
+    {
+      "title": "Visualization method of movement trajectory in outfielder’s fly ball catching technique using baseball video",
+      "authors": "Shunzo Yamagishi, Hidehiko Shishido, Yoshinari Kameda, Itaru Kitahara",
+      "cite": "in Proceedings of the SPIE, Volume 12592, International Workshop on Advanced Imaging Technology (IWAIT) 2023, SPIE, pp. 54–59, Mar. 2023."
+    }
+  ],
+  "dom": [
+    {
+      "title": "フィールド上の選手位置推定精度向上のためのCGシミュレーションを用いたデータセットの構築",
+      "authors": "池上 柊人, 山岸 峻造, 尾山 匡浩, 北原 格",
+      "cite": "研究報告スポーツ情報学（SI）, 2024-SI-2, No. 1, pp. 1-3, 2024"
+    },
+    {
+      "title": "野球放送映像におけるフライ性打球に対する外野手の移動軌跡の可視化手法",
+      "authors": "山岸 峻造, 謝 淳, 宍戸 英彦, 北原 格",
+      "cite": "電子情報通信学会技術研究報告，Vol. 123，No.347，2024，pp.47-52"
+    },
+    {
+      "title": "野球映像を用いた外野手の捕球技術における移動軌跡の分析",
+      "authors": "山岸 峻造, 宍戸 英彦, 亀田 能成, 北原 格",
+      "cite": "情報科学技術フォーラム講演論文集, Vol. 21, No.3, pp. 257-258, 2022"
+    },
+    {
+      "title": "野球映像を用いた外野手のフライ性打球における移動軌跡の可視化",
+      "authors": "山岸 峻造, 宍戸 英彦, 亀田 能成, 北原 格",
+      "cite": "電子情報通信学会技術研究報告, Vol. 122, No.175, pp.32-37, 2022"
+    }
+  ],
+  "others": [
+    {
+      "title": "動的に撮影した映像に基づく広域人物トラッキング",
+      "authors": "北原 格, 山岸 峻造, 池上 柊人",
+      "cite": "ハイパフォーマンススポーツ・カンファレンス2025，東京都北区，2025年12月"
+    },
+    {
+      "title": "SoccerNet 2025 Challenges Results",
+      "authors": "S. Giancola et al.",
+      "cite": "arXiv:2508.19182, Aug. 26, 2025",
+      "links": [
         {
-          "title": "A Player Position Tracking Method Based on a Wide-Area Pan-Tilt-Zoom Video",
-          "authors_html": "Shunzo Yamagishi, Chun Xie, Hidehiko Shishido, Itaru Kitahara",
-          "venue": "in Proceedings of the 12th International Conference on Sport Sciences Research and Technology Support, SciTePress, 46–53, Dec. 2024"
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2508.19182"
         },
         {
-          "title": "Visualization method of movement trajectory in outfielder’s fly ball catching technique using baseball video",
-          "authors_html": "Shunzo Yamagishi, Hidehiko Shishido, Yoshinari Kameda, Itaru Kitahara",
-          "venue": "in Proceedings of the SPIE, Volume 12592, IWAIT 2023, SPIE, pp. 54–59, Mar. 2023."
+          "label": "DOI",
+          "url": "https://doi.org/10.48550/arXiv.2508.19182"
         }
-    ],
-    "domestic": [
-        {
-          "title": "フィールド上の選手位置推定精度向上のためのCGシミュレーションを用いたデータセットの構築",
-          "authors_html": "池上 柊人, 山岸 峻造, 尾山 匡浩, 北原 格",
-          "venue": "研究報告スポーツ情報学（SI）, 2024-SI-2, No. 1, pp. 1-3, 2024"
-        }
-    ],
-    "others": [
-        {
-          "title": "動的に撮影した映像に基づく広域人物トラッキング",
-          "authors_html": "北原 格, 山岸 峻造, 池上 柊人",
-          "venue": "ハイパフォーマンススポーツ・カンファレンス2025，東京都北区，2025年12月"
-        }
-    ],
-    "awards": [
-        {
-          "title": "筑波大学優秀修士論文賞",
-          "venue": "筑波大学 理工情報生命学術院 ... 2025年3月"
-        }
-    ]
+      ]
+    },
+    {
+      "title": "動的撮影映像による広範囲を移動する選手の位置推定法の検討",
+      "authors": "山岸 峻造, 謝 淳, 宍戸 英彦, 北原 格",
+      "cite": "Sports Informatics and Technology 2025，東京都江東区，2025年7月"
+    },
+    {
+      "title": "サッカー放送映像を用いたGame State Reconstructionのための統合的パイプライン構築",
+      "authors": "スコットアトム, Yeung Calvin, 鈴木智大, 藤井慶輔, 上川優太, 内田郁真, 中山晴斗, 山岸 峻造, Shrestha Pragyan, 登内雅人, 渡辺莉央, 橋口昂矢",
+      "cite": "第28回画像の認識・理解シンポジウム(MIRU2025)，京都市，2025年7月"
+    },
+    {
+      "title": "Player Position Estimating Method based on a Wide-Area Pan-Tilt-Zoom Video",
+      "authors": "Shunzo Yamagishi, Chun Xie, Hidehiko Shishido, Itaru Kitahara",
+      "cite": "ARIHHP Human High Performance Forum 2025, Tsukuba, Mar. 2025"
+    },
+    {
+      "title": "パンチルトズーム映像に基づく大規模フィールド上を移動する人物の位置推定法",
+      "authors": "山岸 峻造",
+      "cite": "筑波大学 理工情報生命学術院 システム情報工学研究群 知能機能システム学位プログラム 修士論文発表会"
+    },
+    {
+      "title": "パンチルトズーム映像による広範囲を移動する選手の位置推定手法",
+      "authors": "山岸 峻造, 謝 淳, 宍戸 英彦, 北原 格",
+      "cite": "第27回画像の認識・理解シンポジウム(MIRU2024)，熊本市，2024年8月"
+    },
+    {
+      "title": "野球映像を用いた外野手のフライ性打球に対する移動軌跡の可視化",
+      "authors": "山岸 峻造",
+      "cite": "筑波大学 理工学群 工学システム学類 卒業論文発表会"
+    }
+  ],
+  "award": [
+    {
+      "title": "筑波大学優秀修士論文賞",
+      "cite": "筑波大学 理工情報生命学術院 システム情報工学研究群 知能機能システム学位プログラム, つくば市，2025年3月"
+    },
+    {
+      "title": "筑波大学茗渓会賞",
+      "cite": "筑波大学 理工情報生命学術院 システム情報工学研究群 知能機能システム学位プログラム, つくば市，2025年3月"
+    },
+    {
+      "title": "icSPORTS2024 Best Student Paper Honorable Mention",
+      "cite": "the International Conference on Sport Sciences Research and Technology Support (icSPORTS) 2024, Porto, 2025年3月"
+    },
+    {
+      "title": "筑波大学校友会江崎賞",
+      "cite": "筑波大学 理工学群 工学システム学類, つくば市, 2023年3月"
+    },
+    {
+      "title": "IWAIT2023 Best Paper Award",
+      "cite": "International Workshop on Advanced Imaging Technology (IWAIT) 2023, Jeju, Jan. 2023"
+    }
+  ]
 }
