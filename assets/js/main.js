@@ -120,16 +120,6 @@ function underlineMyName(authors) {
 
   let result = authors;
 
-  // MY_NAMES.forEach(name => {
-  //   // 正規表現エスケープ
-  //   const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  //   const re = new RegExp(`\\b${escaped}\\b`, "g");
-
-  //   result = result.replace(
-  //     re,
-  //     `<u>${name}</u>`
-  //   );
-  // });
   MY_NAMES.forEach(name => {
     // 正規表現エスケープ
     const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
