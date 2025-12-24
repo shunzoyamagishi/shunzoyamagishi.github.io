@@ -6,85 +6,7 @@
     <title>Shunzo YAMAGISHI | 山岸 峻造 </title>
     <!-- Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Font (Inter) for clean aesthetics --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <style>
-        /* 基本的なスタイル設定 */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0d1117; /* GitHub Dark Mode Background */
-            color: #c9d1d9; /* Light text for dark background */
-            scroll-behavior: smooth;
-        }
-        .section-title {
-            position: relative;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 60px;
-            height: 3px;
-            background-color: #38bdf8; /* Sky Blue accent */
-            border-radius: 9999px;
-        }
-        /* サブセクションのタイトルのスタイル */
-        .subsection-title {
-            color: #38bdf8; /* Sky Blue */
-            font-weight: 600; /* semi-bold */
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-            padding-left: 0.5rem;
-            border-left: 4px solid #38bdf8;
-        }
-        /* プロジェクトカードのホバーエフェクト */
-        .project-card {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .project-card:hover .project-thumbnail {
-            transform: translateY(-5px);
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-            border-color: #38bdf8;
-        }
-        /* ヘッダーのオフセット調整（アンカーリンク用） */
-        section {
-            scroll-margin-top: 100px;
-        }
-
-        /* トグル（details/summary）のスタイル */
-        details summary {
-            list-style: none;
-            cursor: pointer;
-            outline: none;
-        }
-        details summary::-webkit-details-marker {
-            display: none;
-        }
-        details[open] summary .toggle-icon {
-            transform: rotate(90deg);
-        }
-
-        /* 論文リストのホバー強調 */
-        .pub-item:hover {
-            background-color: rgba(56, 189, 248, 0.03);
-        }
-
-        /* モーダルアニメーション */
-        #project-modal {
-            transition: opacity 0.3s ease;
-        }
-        #modal-content {
-            transition: transform 0.3s ease;
-        }
-        body.modal-open {
-            overflow: hidden;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="antialiased">
 
@@ -427,93 +349,10 @@
         </div>
     </div>
 
-    <script>
-        // プロジェクトデータの定義
-        const projects = {
-            project1: {
-                title: "PTZ映像からの選手位置推定",
-                img: "images/MLB.jpg",
-                description: "スポーツ現場での実用性の高いパン・チルト・ズーム（PTZ）カメラの映像から、選手のフィールド平面を推定可能なシステムです。ランドマークが疎なスポーツフィールドにおける動的なカメラワーク下での高精度な位置推定を実現しました。",
-                tech: ["Python", "PyTorch", "OpenCV"],
-                role: "複数の査読付き国際会議にて発表。"
-            },
-            project2: {
-                title: "選手位置推定精度向上のための座標決定法",
-                img: "images/running.png",
-                description: "単眼映像による選手フィールド位置推定法の精度向上を目的に、発展的な画像座標系における選手位置決定法を提案しました。提案手法は、スポーツ競技におけるジャンプ等の複雑な動作時においても従来より高精度な位置推定を可能にします。",
-                tech: ["Python", "PyTorch", "Unity"],
-                role: "Now in Progress...."
-            },
-            project3: {
-                title: "SoccerNet Challenge 2025 GSR",
-                img: "https://cdn.buttercms.com/MUfvkohlSPMrGHGYpyuq",
-                description: "株式会社Playboxと株式会社MIXIの共同チームにて、CVPR 2025コンペティション「SoccerNet Challenge (Game State Reconstruction)」に参加。サッカーの放送映像から選手の3D位置やフィールド上の情報を再構成するパイプラインを開発しました。",
-                tech: ["Python", "Pytorch", "OpenCV"],
-                role: "自動カメラキャリブレーション部分の技術開発を担当。"
-            },
-            project4: {
-                title: "Skateboard Ollie Simulator",
-                img: "https://via.placeholder.com/800x400?text=VR+Ollie+Simulation",
-                description: "筑波大学のエンパワースタジオ（大規模VR空間）を活用し、スケートボードのオーリーをVR空間で再現可能なシミュレーターを構築しました。",
-                tech: ["VR/AR", "Unity", "Arduino"],
-                role: "VR映像提示システムおよびマイクロコンピュータとの通信によるセンサデータ取得部分を担当。"
-            }
-        };
-
-        function openModal(projectId) {
-            const data = projects[projectId];
-            if (!data) return;
-
-            // コンテンツの注入
-            document.getElementById('modal-title').textContent = data.title;
-            document.getElementById('modal-img').src = data.img;
-            document.getElementById('modal-img').alt = data.title;
-            document.getElementById('modal-description').textContent = data.description;
-            document.getElementById('modal-role').textContent = data.role;
-
-            const techContainer = document.getElementById('modal-tech');
-            techContainer.innerHTML = '';
-            data.tech.forEach(t => {
-                const badge = document.createElement('span');
-                badge.className = 'px-3 py-1 bg-sky-500/10 text-sky-400 text-xs font-bold rounded-full border border-sky-500/20';
-                badge.textContent = t;
-                techContainer.appendChild(badge);
-            });
-
-            // モーダル表示
-            const modal = document.getElementById('project-modal');
-            const content = document.getElementById('modal-content');
-            
-            document.body.classList.add('modal-open');
-            modal.classList.remove('hidden');
-            
-            // アニメーションのトリガー
-            setTimeout(() => {
-                content.classList.remove('scale-95', 'opacity-0');
-                content.classList.add('scale-100', 'opacity-100');
-            }, 10);
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('project-modal');
-            const content = document.getElementById('modal-content');
-            
-            content.classList.add('scale-95', 'opacity-0');
-            content.classList.remove('scale-100', 'opacity-100');
-            
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                document.body.classList.remove('modal-open');
-            }, 300);
-        }
-
-        // 背景クリックで閉じる
-        document.getElementById('project-modal').addEventListener('click', function(e) {
-            if (e.target === this) closeModal();
-        });
-    </script>
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>
+
 
 
 
