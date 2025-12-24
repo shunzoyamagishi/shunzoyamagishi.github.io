@@ -23,7 +23,7 @@ const projects = {
     },
     project4: {
         title: "Skateboard Ollie Simulator",
-        img: "https://via.placeholder.com/800x400?text=VR+Ollie+Simulation",
+        img: "images/ollie.jpg",
         description: "筑波大学のエンパワースタジオ（大規模VR空間）を活用し、スケートボードのオーリーをVR空間で再現可能なシミュレーターを構築しました。",
         tech: ["VR/AR", "Unity", "Arduino"],
         role: "VR映像提示システムおよびマイクロコンピュータとの通信によるセンサデータ取得部分を担当。"
@@ -133,3 +133,14 @@ function underlineMyName(authors) {
 
   return result;
 }
+
+function escapeHtml(str) {
+  if (typeof str !== "string") return "";
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
