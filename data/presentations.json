@@ -2,26 +2,26 @@
     "international": [
         {
           "title": "A Player Position Tracking Method Based on a Wide-Area Pan-Tilt-Zoom Video",
-          "authors_html": "<u>Shunzo Yamagishi</u>, Chun Xie, Hidehiko Shishido, Itaru Kitahara",
+          "authors_html": "Shunzo Yamagishi, Chun Xie, Hidehiko Shishido, Itaru Kitahara",
           "venue": "in Proceedings of the 12th International Conference on Sport Sciences Research and Technology Support, SciTePress, 46–53, Dec. 2024"
         },
         {
           "title": "Visualization method of movement trajectory in outfielder’s fly ball catching technique using baseball video",
-          "authors_html": "<u>Shunzo Yamagishi</u>, Hidehiko Shishido, Yoshinari Kameda, Itaru Kitahara",
+          "authors_html": "Shunzo Yamagishi, Hidehiko Shishido, Yoshinari Kameda, Itaru Kitahara",
           "venue": "in Proceedings of the SPIE, Volume 12592, IWAIT 2023, SPIE, pp. 54–59, Mar. 2023."
         }
     ],
     "domestic": [
         {
           "title": "フィールド上の選手位置推定精度向上のためのCGシミュレーションを用いたデータセットの構築",
-          "authors_html": "池上 柊人, <u>山岸 峻造</u>, 尾山 匡浩, 北原 格",
+          "authors_html": "池上 柊人, 山岸 峻造, 尾山 匡浩, 北原 格",
           "venue": "研究報告スポーツ情報学（SI）, 2024-SI-2, No. 1, pp. 1-3, 2024"
         }
     ],
     "others": [
         {
           "title": "動的に撮影した映像に基づく広域人物トラッキング",
-          "authors_html": "北原 格, <u>山岸 峻造</u>, 池上 柊人",
+          "authors_html": "北原 格, 山岸 峻造, 池上 柊人",
           "venue": "ハイパフォーマンススポーツ・カンファレンス2025，東京都北区，2025年12月"
         }
     ],
