@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/publications-loader.js" defer></script>
+    <script src="assets/js/projects-loader.js" defer></script>
 </head>
 <body class="antialiased">
 
@@ -117,34 +118,12 @@
             </div>
         </section>
 
-        <!-- 3. プロジェクト -->
         <section id="projects" class="p-6 bg-[#161b22] rounded-xl shadow-lg border border-gray-700">
             <h2 class="section-title text-2xl font-bold">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- プロジェクト 1 -->
-                <div class="project-card p-4 border border-sky-600/50 rounded-lg bg-sky-900/10 transition duration-300" onclick="openModal('project1', 'en')">
-                    <img src="images/MLB.jpg" alt="プロジェクト1" class="project-thumbnail w-full h-40 object-cover rounded-md mb-4 transition duration-300">
-                    <h3 class="text-xl font-bold text-sky-300 mb-1">Athlete Position Estimation based on PTZ Video</h3>
-                    <p class="text-gray-400 line-clamp-2">Developed a practical player localization method for video sequences featuring significant PTZ (Pan-Tilt-Zoom) variations.</p>
-                </div>
-                <!-- プロジェクト 2 -->
-                <div class="project-card p-4 border border-indigo-600/50 rounded-lg bg-indigo-900/10 transition duration-300" onclick="openModal('project2', 'en')">
-                    <img src="images/running.png" alt="プロジェクト2" class="project-thumbnail w-full h-40 object-cover rounded-md mb-4 transition duration-300">
-                    <h3 class="text-xl font-bold text-indigo-300 mb-1">Improving Athlete Localization Accuracy via Optimized Coordinate Determination</h3>
-                    <p class="text-gray-400 line-clamp-2">Proposed an advanced coordinate determination method in image space, achieving enhanced localization accuracy.</p>
-                </div>
-                <!-- プロジェクト 3 -->
-                <div class="project-card p-4 border border-sky-600/50 rounded-lg bg-sky-900/10 transition duration-300" onclick="openModal('project3', 'en')">
-                    <img src="https://cdn.buttercms.com/MUfvkohlSPMrGHGYpyuq" alt="プロジェクト3" class="project-thumbnail w-full h-40 object-cover rounded-md mb-4 transition duration-300">
-                    <h3 class="text-xl font-bold text-sky-300 mb-1">SoccerNet Challenge 2025 GSR</h3>
-                    <p class="text-gray-400 line-clamp-2">Participated in the "SoccerNet Challenge" competition at CVPR 2025.</p>
-                </div>
-                <!-- プロジェクト 4 -->
-                <div class="project-card p-4 border border-indigo-600/50 rounded-lg bg-indigo-900/10 transition duration-300" onclick="openModal('project4', 'en')">
-                    <img src="images/ollie.jpg" alt="プロジェクト4" class="project-thumbnail w-full h-40 object-cover rounded-md mb-4 transition duration-300">
-                    <h3 class="text-xl font-bold text-indigo-300 mb-1">Skateboard Ollie Simulator</h3>
-                    <p class="text-gray-400 line-clamp-2">Developed a VR skateboard simulator utilizing the University of Tsukuba’s Empower Studio.</p>
-                </div>
+            <!-- プロジェクト一覧のコンテナ: 中身は assets/js/projects-loader.js によって生成されます -->
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Loading state -->
+                <p class="text-gray-500">Loading projects...</p>
             </div>
         </section>
 

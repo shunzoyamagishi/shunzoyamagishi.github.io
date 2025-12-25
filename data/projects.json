@@ -1,0 +1,102 @@
+{
+  "ja": [
+    {
+      "id": "project1",
+      "title": "PTZ映像からの選手位置推定",
+      "summary": "大きなPTZ変化を含む映像からの実用的な選手位置推定手法を構築しました。",
+      "image": "images/MLB.jpg",
+      "color": "sky",
+      "details": {
+        "description": "放送映像のような、パン・チルト・ズーム（PTZ）カメラの激しい動きを含む映像から、フィールド上の選手位置を高精度に特定するアルゴリズムを開発しました。特徴点マッチングとホモグラフィ変換を組み合わせ、ロバストな追跡を実現しています。",
+        "tech": ["Python", "OpenCV", "scikit-learn", "CameraCalibration"],
+        "role": "アルゴリズム設計・実装・評価実験"
+      }
+    },
+    {
+      "id": "project2",
+      "title": "選手位置推定精度向上のための座標決定法",
+      "summary": "発展的な画像座標系における選手位置決定法を提案し、精度の向上を実現しました。",
+      "image": "images/running.png",
+      "color": "indigo",
+      "details": {
+        "description": "単眼映像による選手フィールド位置推定法の精度向上を目的に、発展的な画像座標系における選手位置決定法を提案しました。提案手法は、スポーツ競技におけるジャンプ等の複雑な動作時においても従来より高精度な位置推定を可能にします。",
+        "tech": ["Python", "PyTorch", "Unity", "DeepLearning"],
+        "role": "手法提案・プロトタイプ開発"
+      }
+    },
+    {
+      "id": "project3",
+      "title": "SoccerNet Challenge 2025 GSR",
+      "summary": "CVPR 2025におけるコンペティション「SoccerNet Challenge」に参画しました。",
+      "image": "https://cdn.buttercms.com/MUfvkohlSPMrGHGYpyuq",
+      "color": "sky",
+      "details": {
+        "description": "世界最高峰のコンピュータビジョン国際会議CVPRで開催されたコンペティションに参加。サッカー映像解析におけるGame State Reconstruction (GSR) タスクに取り組み、特定のアプローチでリーダーボード上位を目指しました。",
+        "tech": ["Python", "OpenCV", "scikit-learn", "Deep Learning"],
+        "role": "データ解析・モデル学習パイプライン構築"
+      }
+    },
+    {
+      "id": "project4",
+      "title": "Skateboard Ollie Simulator",
+      "summary": "筑波大学エンパワースタジオを用いたVRスケートボードシミュレーターの開発を担当。",
+      "image": "images/ollie.jpg",
+      "color": "indigo",
+      "details": {
+        "description": "世界最大級の床面・壁面没入型ディスプレイシステム「エンパワースタジオ」を活用し、スケートボードのオーリー（ジャンプ）動作を体験・練習できるシミュレーターを開発。物理演算に基づいた挙動とリアルタイムフィードバックを実装しました。",
+        "tech": ["VR/AR", "Unity", "Arduino"],
+        "role": "VRアプリケーション開発・ユーザー実験"
+      }
+    }
+  ],
+  "en": [
+    {
+      "id": "project1",
+      "title": "Player Localization from PTZ Video",
+      "summary": "A system capable of estimating player positions on the field plane from PTZ camera footage.",
+      "image": "images/MLB.jpg",
+      "color": "sky",
+      "details": {
+        "description": "A system capable of estimating player positions on the field plane from Pan-Tilt-Zoom (PTZ) camera footage, which is highly practical for real-world sports analysis. It achieves high-precision localization even under dynamic camera work on sports fields with sparse landmarks.",
+        "tech": ["Python", "OpenCV", "scikit-learn", "CameraCalibration"],
+        "role": "Presented at multiple peer-reviewed international conferences."
+      }
+    },
+    {
+      "id": "project2",
+      "title": "Coordinate Determination for Improved Localization Accuracy",
+      "summary": "Proposed an advanced coordinate determination method within the image coordinate system.",
+      "image": "images/running.png",
+      "color": "indigo",
+      "details": {
+        "description": "To enhance the accuracy of player field position estimation from monocular video, I proposed an advanced coordinate determination method within the image coordinate system. This method enables more precise localization than conventional techniques, even during complex athletic movements such as jumping.",
+        "tech": ["Python", "PyTorch", "Unity", "DeepLearning"],
+        "role": "Now in Progress...."
+      }
+    },
+    {
+      "id": "project3",
+      "title": "SoccerNet Challenge 2025 GSR",
+      "summary": "Participated in the CVPR 2025 competition 'SoccerNet Challenge'.",
+      "image": "https://cdn.buttercms.com/MUfvkohlSPMrGHGYpyuq",
+      "color": "sky",
+      "details": {
+        "description": "Participated in the CVPR 2025 competition 'SoccerNet Challenge (Game State Reconstruction)' as part of a joint team from Playbox Inc. and MIXI, Inc. We developed a pipeline to reconstruct 3D player positions and field information from broadcast soccer footage.",
+        "tech": ["Python", "OpenCV", "scikit-learn", "DeepLearning"],
+        "role": "Responsible for the technical development of the automatic camera calibration module."
+      }
+    },
+    {
+      "id": "project4",
+      "title": "Skateboard Ollie Simulator",
+      "summary": "Constructed a simulator that reproduces the skateboarding 'Ollie' in a VR environment.",
+      "image": "images/ollie.jpg",
+      "color": "indigo",
+      "details": {
+        "description": "Constructed a simulator that reproduces the skateboarding 'Ollie' in a VR environment, leveraging the University of Tsukuba's Empower Studio (a large-scale VR facility).",
+        "tech": ["VR/AR", "Unity", "Arduino"],
+        "role": "Responsible for the VR visual display system and sensor data acquisition via microcomputer communication."
+      }
+    }
+  ]
+}

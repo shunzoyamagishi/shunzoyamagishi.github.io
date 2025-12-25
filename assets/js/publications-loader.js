@@ -1,6 +1,12 @@
 let PUB_DATA = null;
 const rendered = new Set();
 
+// === 自分の名前（自動下線対象） ===
+const MY_NAMES = [
+  "Shunzo Yamagishi",
+  "山岸 峻造"
+];
+
 async function loadPubsOnce() {
   if (PUB_DATA) return PUB_DATA;
 
@@ -43,4 +49,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+function underlineMyName(authors) {
+  if (!authors) return "";
+
+  let result = authors;
+
+  MY_NAMES.forEach(name => {
+    // 正規表現エスケープ
+    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    
+    // 文字列に「ASCII文字（英数字・記号）以外」が含まれているかチェック
+    const hasMultiByte = /[^\x00-\x7F]/.test(name);
+    let re;
+
+    if (hasMultiByte) {
+      // 日本語が含まれる場合: 単語境界 \b を使わずに作成
+      re = new RegExp(escaped, "g");
+    } else {
+      // 英語のみの場合: 単語境界 \b を使用して、部分一致を防ぐ
+      re = new RegExp(`\\b${escaped}\\b`, "g");
+    }
+
+    result = result.replace(
+      re,
+      `<u>${name}</u>`
+    );
+  });
+
+  return result;
+}
 
