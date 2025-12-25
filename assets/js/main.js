@@ -68,7 +68,7 @@ const MY_NAMES = [
   "山岸 峻造"
 ];
 
-function openModal(projectId, lang = "ja") {
+function openModal(projectId, lang) {
     const data = projects[lang][projectId];
     if (!data) return;
 
