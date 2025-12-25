@@ -50,6 +50,32 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+function renderPubList(containerId, items) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+
+  el.innerHTML = items.map((p, i) => {
+    const num = i + 1;
+
+    const authors = p.authors
+      ? `<p class="text-gray-300 text-sm mb-2">${underlineMyName(escapeHtml(p.authors))}</p>`
+      : "";
+
+    const venue = p.venue
+      ? `<p class="text-xs text-gray-500 italic">${escapeHtml(p.venue)}</p>`
+      : "";
+
+    return `
+      <div class="pub-item p-4 relative pl-12 transition-colors">
+        <span class="absolute left-4 top-4 text-sky-500 font-bold">${num}.</span>
+        <h4 class="text-white font-bold text-lg mb-1 leading-tight">${escapeHtml(p.title || "")}</h4>
+        ${authors}
+        ${venue}
+      </div>
+    `;
+  }).join("");
+}
+
 function underlineMyName(authors) {
   if (!authors) return "";
 

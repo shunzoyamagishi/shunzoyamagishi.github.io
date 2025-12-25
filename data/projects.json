@@ -59,7 +59,7 @@
       "details": {
         "description": "A system capable of estimating player positions on the field plane from Pan-Tilt-Zoom (PTZ) camera footage, which is highly practical for real-world sports analysis. It achieves high-precision localization even under dynamic camera work on sports fields with sparse landmarks.",
         "tech": ["Python", "OpenCV", "scikit-learn", "CameraCalibration"],
-        "role": "Presented at multiple peer-reviewed international conferences."
+        "role": "Algorithm Design, Implementation, Evaluation Experiments"
       }
     },
     {
@@ -71,7 +71,7 @@
       "details": {
         "description": "To enhance the accuracy of player field position estimation from monocular video, I proposed an advanced coordinate determination method within the image coordinate system. This method enables more precise localization than conventional techniques, even during complex athletic movements such as jumping.",
         "tech": ["Python", "PyTorch", "Unity", "DeepLearning"],
-        "role": "Now in Progress...."
+        "role": "Methodology Proposal and Prototype Development"
       }
     },
     {
