@@ -40,7 +40,7 @@
       "id": "project4",
       "title": "Skateboard Ollie Simulator",
       "summary": "筑波大学エンパワースタジオを用いたVRスケートボードシミュレーターの開発を担当。",
-      "image": "images/ollie.jpg",
+      "image": "images/olliebooster.jpeg",
       "color": "indigo",
       "details": {
         "description": "世界最大級の床面・壁面没入型ディスプレイシステム「エンパワースタジオ」を活用し、スケートボードのオーリー（ジャンプ）動作を体験・練習できるシミュレーターを開発しました。",
@@ -90,7 +90,7 @@
       "id": "project4",
       "title": "Skateboard Ollie Simulator",
       "summary": "Constructed a simulator that reproduces the skateboarding 'Ollie' in a VR environment.",
-      "image": "images/ollie.jpg",
+      "image": "images/olliebooster.jpeg",
       "color": "indigo",
       "details": {
         "description": "Constructed a simulator that reproduces the skateboarding 'Ollie' in a VR environment, leveraging the University of Tsukuba's Empower Studio (a large-scale VR facility).",
