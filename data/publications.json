@@ -1,6 +1,11 @@
 {
   "intl": [
     {
+      "title": "An Accuracy Improvement of Athlete Position Estimation on the Sports Field Based on CG Simulation",
+      "authors": "Shunzo Yamagishi, Shuto Ikegami, Chun Xie, Tadahiro Oyama, Itaru Kitahara",
+      "venue": "in Proceedings of ISEA 2026 Conference - The Engineering of Sports 16, Washington State University, Jul. 2026"
+    },
+    {
       "title": "A Player Position Tracking Method Based on a Wide-Area Pan-Tilt-Zoom Video",
       "authors": "Shunzo Yamagishi, Chun Xie, Hidehiko Shishido, Itaru Kitahara",
       "venue": "in Proceedings of the 12th International Conference on Sport Sciences Research and Technology Support, SciTePress, 46–53, Dec. 2024"
