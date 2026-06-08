@@ -3,17 +3,35 @@
     {
       "title": "An Accuracy Improvement of Athlete Position Estimation on the Sports Field Based on CG Simulation",
       "authors": "Shunzo Yamagishi, Shuto Ikegami, Chun Xie, Tadahiro Oyama, Itaru Kitahara",
-      "venue": "in Proceedings of ISEA 2026 Conference - The Engineering of Sports 16, Washington State University, Jul. 2026"
+      "venue": "in Proceedings of ISEA 2026 Conference - The Engineering of Sports 16, Washington State University, Jul. 2026",
+      "links": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.7273/000008166"
+        }
+      ]
     },
     {
       "title": "A Player Position Tracking Method Based on a Wide-Area Pan-Tilt-Zoom Video",
       "authors": "Shunzo Yamagishi, Chun Xie, Hidehiko Shishido, Itaru Kitahara",
-      "venue": "in Proceedings of the 12th International Conference on Sport Sciences Research and Technology Support, SciTePress, 46–53, Dec. 2024"
+      "venue": "in Proceedings of the 12th International Conference on Sport Sciences Research and Technology Support, SciTePress, 46–53, Dec. 2024",
+      "links": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.5220/0012920100003828"
+        }
+      ]
     },
     {
       "title": "Visualization method of movement trajectory in outfielder’s fly ball catching technique using baseball video",
       "authors": "Shunzo Yamagishi, Hidehiko Shishido, Yoshinari Kameda, Itaru Kitahara",
-      "venue": "in Proceedings of the SPIE, Volume 12592, International Workshop on Advanced Imaging Technology (IWAIT) 2023, SPIE, pp. 54–59, Mar. 2023."
+      "venue": "in Proceedings of the SPIE, Volume 12592, International Workshop on Advanced Imaging Technology (IWAIT) 2023, SPIE, pp. 54–59, Mar. 2023.",
+      "links": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1117/12.2666494"
+        }
+      ]
     }
   ],
   "dom": [
